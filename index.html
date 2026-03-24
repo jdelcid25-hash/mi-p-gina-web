@@ -6,235 +6,135 @@
 <title>Julio Cesar Del Cid Torres | Ingeniería en Energías Renovables</title>
 <style>
 
-/* =====================================================
-   VARIABLES DE COLOR Y TIPOGRAFÍA
-   ===================================================== */
 :root {
-  --azul:        #1a6db5;
-  --azul-claro:  #e8f2fb;
-  --azul-medio:  #5fa3d8;
-  --verde:       #2e8b5a;
-  --verde-claro: #e4f4ec;
-  --geo:         #c94f14;
-  --geo-claro:   #fdeee7;
-  --solar:       #c98a10;
-  --solar-claro: #fdf4e0;
-  --crema:       #f6f3ec;
-  --crema2:      #eeebe2;
-  --blanco:      #ffffff;
-  --tinta:       #1c2429;
-  --tinta2:      #3d4f5c;
-  --gris:        #7a8e9a;
-  --borde:       #d8d2c5;
+  --azul:         #1a6db5;
+  --azul-claro:   #e8f2fb;
+  --azul-medio:   #5fa3d8;
+  --verde:        #2e8b5a;
+  --verde-claro:  #e4f4ec;
+  --geo:          #c94f14;
+  --geo-claro:    #fdeee7;
+  --solar:        #c98a10;
+  --solar-claro:  #fdf4e0;
+  --noche:        #1a2a4a;
+  --noche-claro:  #e8edf5;
+  --crema:        #f6f3ec;
+  --crema2:       #eeebe2;
+  --blanco:       #ffffff;
+  --tinta:        #1c2429;
+  --tinta2:       #3d4f5c;
+  --gris:         #7a8e9a;
+  --borde:        #d8d2c5;
   --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   --mono: 'Courier New', Consolas, 'Lucida Console', monospace;
 }
-
-/* =====================================================
-   RESET Y BASE
-   ===================================================== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body {
-  font-family: var(--sans);
-  background: var(--crema);
-  color: var(--tinta);
-  font-size: 16px;
-  line-height: 1.65;
-}
+body { font-family: var(--sans); background: var(--crema); color: var(--tinta); font-size: 16px; line-height: 1.65; }
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 
-/* =====================================================
-   NAVBAR
-   ===================================================== */
+/* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 999;
-  background: rgba(246,243,236,0.95);
-  border-bottom: 1px solid var(--borde);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0.9rem 2.5rem;
+  background: rgba(246,243,236,0.96); border-bottom: 1px solid var(--borde);
+  display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 2.5rem;
 }
-.nav-marca {
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  color: var(--azul);
-  letter-spacing: 0.1em;
-  font-weight: bold;
-}
-.nav-links { display: flex; gap: 1.8rem; list-style: none; }
-.nav-links a {
-  font-size: 0.84rem;
-  color: var(--gris);
-  transition: color 0.2s;
-}
+.nav-marca { font-family: var(--mono); font-size: 0.78rem; color: var(--azul); letter-spacing: 0.1em; font-weight: bold; }
+.nav-links  { display: flex; gap: 1.5rem; list-style: none; }
+.nav-links a { font-size: 0.8rem; color: var(--gris); transition: color 0.2s; }
 .nav-links a:hover { color: var(--azul); }
 
-/* =====================================================
-   HÉROE
-   ===================================================== */
-#hero {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 4rem;
-  padding: 7rem 5vw 4rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
+/* BOTONES */
+.btn { display: inline-block; padding: 0.6rem 1.4rem; border-radius: 8px; font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.06em; cursor: pointer; transition: all 0.2s; border: none; }
+.btn-solido { background: var(--azul); color: #fff; }
+.btn-solido:hover { background: #155fa0; }
+.btn-borde  { background: transparent; color: var(--azul); border: 1.5px solid var(--azul); }
+.btn-borde:hover  { background: var(--azul-claro); }
 
-.hero-etiqueta {
-  display: inline-block;
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--verde);
-  background: var(--verde-claro);
-  border: 1px solid #b6dfca;
-  border-radius: 100px;
-  padding: 0.28rem 0.85rem;
-  margin-bottom: 1.2rem;
-}
-
-h1 {
-  font-size: clamp(2.2rem, 5vw, 3.6rem);
-  font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  color: var(--tinta);
-  margin-bottom: 0.7rem;
-}
+/* HÉROE */
+#hero { min-height: 100vh; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4rem; padding: 7rem 5vw 4rem; max-width: 1100px; margin: 0 auto; }
+.hero-chip { display: inline-block; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--verde); background: var(--verde-claro); border: 1px solid #b6dfca; border-radius: 100px; padding: 0.28rem 0.85rem; margin-bottom: 1.2rem; }
+h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 700; line-height: 1.08; letter-spacing: -0.02em; color: var(--tinta); margin-bottom: 0.7rem; }
 h1 span { color: var(--azul); }
-
-.hero-cargo {
-  font-family: var(--mono);
-  font-size: 0.88rem;
-  color: var(--gris);
-  margin-bottom: 1.3rem;
-  letter-spacing: 0.05em;
-}
-
-.hero-desc {
-  font-size: 0.97rem;
-  color: var(--tinta2);
-  max-width: 500px;
-  line-height: 1.8;
-  margin-bottom: 2rem;
-}
+.hero-cargo { font-family: var(--mono); font-size: 0.88rem; color: var(--gris); margin-bottom: 1.3rem; letter-spacing: 0.05em; }
+.hero-desc  { font-size: 0.97rem; color: var(--tinta2); max-width: 500px; line-height: 1.8; margin-bottom: 2rem; }
 .hero-desc strong { color: var(--geo); font-weight: 600; }
-.hero-desc em     { color: var(--solar); font-style: normal; font-weight: 600; }
-
+.hero-desc em { color: var(--solar); font-style: normal; font-weight: 600; }
 .hero-botones { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
-.btn {
-  display: inline-block;
-  padding: 0.6rem 1.4rem;
-  border-radius: 8px;
-  font-family: var(--mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.06em;
-  cursor: pointer;
-  transition: all 0.2s;
-  border: none;
-}
-.btn-solido  { background: var(--azul); color: #fff; }
-.btn-solido:hover  { background: #155fa0; }
-.btn-borde   { background: transparent; color: var(--azul); border: 1.5px solid var(--azul); }
-.btn-borde:hover   { background: var(--azul-claro); }
-
-/* =====================================================
-   FOTO
-   ===================================================== */
+/* FOTO */
 .foto-col { display: flex; flex-direction: column; align-items: center; gap: 1.2rem; }
-
-.foto-marco {
-  width: 270px; height: 270px;
-  border-radius: 18px;
-  overflow: hidden;
-  border: 3px solid var(--azul-medio);
-  box-shadow: 0 6px 28px rgba(26,109,181,0.15);
-  background: var(--azul-claro);
-  position: relative;
-}
+.foto-marco { width: 270px; height: 270px; border-radius: 18px; overflow: hidden; border: 3px solid var(--azul-medio); box-shadow: 0 6px 28px rgba(26,109,181,0.15); background: var(--azul-claro); position: relative; }
 .foto-marco img { width: 100%; height: 100%; object-fit: cover; }
-.foto-marco::before, .foto-marco::after {
-  content: '';
-  position: absolute;
-  width: 18px; height: 18px;
-  border-color: var(--azul); border-style: solid;
-}
+.foto-marco::before, .foto-marco::after { content: ''; position: absolute; width: 18px; height: 18px; border-color: var(--azul); border-style: solid; }
 .foto-marco::before { top: 8px; left: 8px;    border-width: 2px 0 0 2px; }
 .foto-marco::after  { bottom: 8px; right: 8px; border-width: 0 2px 2px 0; }
-
 .foto-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
-.chip {
-  font-family: var(--mono); font-size: 0.7rem;
-  background: var(--blanco); color: var(--tinta2);
-  border: 1px solid var(--borde);
-  border-radius: 100px; padding: 0.27rem 0.8rem;
-}
+.chip { font-family: var(--mono); font-size: 0.7rem; background: var(--blanco); color: var(--tinta2); border: 1px solid var(--borde); border-radius: 100px; padding: 0.27rem 0.8rem; }
 
-/* =====================================================
-   SECCIONES
-   ===================================================== */
+/* SECCIONES */
 .seccion { padding: 5rem 5vw; }
 .seccion-inner { max-width: 1000px; margin: 0 auto; }
 .sec-fondo-alt   { background: var(--blanco); }
 .sec-fondo-crema { background: var(--crema2); }
+.sec-etiq { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--verde); margin-bottom: 0.4rem; }
+h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); font-weight: 700; letter-spacing: -0.015em; color: var(--tinta); margin-bottom: 2.2rem; }
 
-.sec-etiq {
-  font-family: var(--mono); font-size: 0.7rem;
-  letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--verde); margin-bottom: 0.4rem;
-}
-h2 {
-  font-size: clamp(1.5rem, 2.6vw, 2rem);
-  font-weight: 700; letter-spacing: -0.015em;
-  color: var(--tinta); margin-bottom: 2.2rem;
-}
-
-/* =====================================================
-   SOBRE MÍ
-   ===================================================== */
+/* SOBRE MÍ */
 .sobre-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: start; }
 .sobre-texto { font-size: 0.94rem; color: var(--tinta2); line-height: 1.8; }
 .sobre-texto p + p { margin-top: 0.9rem; }
 .sobre-texto strong { color: var(--azul); font-weight: 600; }
-
 .sobre-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
 .stat-caja { background: var(--crema); border: 1px solid var(--borde); border-radius: 10px; padding: 1rem 1.1rem; }
 .stat-num  { font-family: var(--mono); font-size: 1.35rem; color: var(--azul); font-weight: bold; line-height: 1; }
 .stat-lab  { font-size: 0.77rem; color: var(--gris); margin-top: 0.25rem; }
 
-/* =====================================================
-   ENERGÍAS RENOVABLES
-   ===================================================== */
-.fer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
-.fer-tarjeta {
-  border-radius: 14px; padding: 1.7rem;
-  border: 1.5px solid transparent;
-  position: relative;
-  transition: transform 0.22s, box-shadow 0.22s;
+/* CONSERVA LORETO */
+.conserva-intro {
+  background: linear-gradient(135deg, #e4f4ec 0%, #d4eaf7 100%);
+  border: 1px solid #aad8bf; border-radius: 16px;
+  padding: 2rem 2.2rem; margin-bottom: 2rem;
+  display: flex; align-items: flex-start; gap: 1.5rem;
 }
+.conserva-icono { font-size: 2.4rem; flex-shrink: 0; padding-top: 0.2rem; }
+.conserva-intro h3 { font-size: 1.05rem; font-weight: 700; color: var(--verde); margin-bottom: 0.5rem; }
+.conserva-intro p  { font-size: 0.88rem; color: var(--tinta2); line-height: 1.75; }
+.conserva-intro strong { color: var(--tinta); }
+
+.act-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; margin-bottom: 1.5rem; }
+.act-card { border-radius: 12px; padding: 1.5rem; border: 1.5px solid; transition: transform 0.2s, box-shadow 0.2s; }
+.act-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.act-card.bio   { background: #eef8f3; border-color: #a8ddbf; }
+.act-card.rural { background: #fffaee; border-color: #f0d88a; }
+.act-card.cielo { background: #eef0f8; border-color: #b0bce0; }
+.act-ico   { font-size: 1.8rem; margin-bottom: 0.7rem; }
+.act-tit   { font-size: 0.94rem; font-weight: 700; margin-bottom: 0.45rem; }
+.act-card.bio   .act-tit { color: var(--verde); }
+.act-card.rural .act-tit { color: #9a7010; }
+.act-card.cielo .act-tit { color: var(--noche); }
+.act-txt { font-size: 0.84rem; color: var(--tinta2); line-height: 1.7; }
+
+.conserva-cita {
+  padding: 1.2rem 1.5rem; background: var(--crema);
+  border-left: 3px solid var(--verde); border-radius: 0 8px 8px 0;
+  font-size: 0.88rem; color: var(--tinta2); line-height: 1.75; font-style: italic;
+}
+
+/* ENERGÍAS */
+.fer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.fer-tarjeta { border-radius: 14px; padding: 1.7rem; border: 1.5px solid transparent; position: relative; transition: transform 0.22s, box-shadow 0.22s; }
 .fer-tarjeta:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.09); }
 .fer-tarjeta.geo    { background: var(--geo-claro);   border-color: #f0c0a8; }
 .fer-tarjeta.solar  { background: var(--solar-claro); border-color: #f0d898; }
 .fer-tarjeta.eolica { background: var(--azul-claro);  border-color: #b0d4f0; }
 .fer-tarjeta.marina { background: var(--verde-claro); border-color: #a8d8bc; }
-
-.fer-badge {
-  position: absolute; top: 1rem; right: 1rem;
-  font-family: var(--mono); font-size: 0.64rem;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  padding: 0.18rem 0.6rem; border-radius: 100px; font-weight: bold;
-}
+.fer-badge { position: absolute; top: 1rem; right: 1rem; font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.18rem 0.6rem; border-radius: 100px; font-weight: bold; }
 .geo    .fer-badge { background: rgba(201,79,20,0.12);  color: var(--geo); }
 .solar  .fer-badge { background: rgba(201,138,16,0.12); color: var(--solar); }
 .eolica .fer-badge { background: rgba(26,109,181,0.12); color: var(--azul); }
 .marina .fer-badge { background: rgba(46,139,90,0.12);  color: var(--verde); }
-
 .fer-icono  { font-size: 2rem; margin-bottom: 0.7rem; }
 .fer-titulo { font-size: 1rem; font-weight: 700; margin-bottom: 0.45rem; }
 .geo    .fer-titulo { color: var(--geo); }
@@ -243,100 +143,54 @@ h2 {
 .marina .fer-titulo { color: var(--verde); }
 .fer-desc { font-size: 0.86rem; color: var(--tinta2); line-height: 1.7; }
 
-/* =====================================================
-   LOGROS
-   ===================================================== */
-.logros-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.1rem; }
-.logro-tarjeta {
-  background: var(--crema); border: 1px solid var(--borde);
-  border-radius: 12px; padding: 1.5rem;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
+/* LOGROS */
+.logros-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.1rem; }
+.logro-tarjeta { background: var(--crema); border: 1px solid var(--borde); border-radius: 12px; padding: 1.5rem; transition: transform 0.2s, box-shadow 0.2s; }
 .logro-tarjeta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.07); }
-.logro-icono-wrap {
-  width: 38px; height: 38px; border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.1rem; margin-bottom: 0.75rem;
-}
-.logro-icono-wrap.azul  { background: var(--azul-claro); }
-.logro-icono-wrap.verde { background: var(--verde-claro); }
-.logro-titulo { font-size: 0.93rem; font-weight: 700; color: var(--tinta); margin-bottom: 0.4rem; }
-.logro-desc   { font-size: 0.84rem; color: var(--gris); line-height: 1.7; }
+.logro-ico-wrap { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; margin-bottom: 0.75rem; }
+.ib { background: var(--azul-claro); }
+.ig { background: var(--verde-claro); }
+.in { background: var(--noche-claro); }
+.logro-tit  { font-size: 0.92rem; font-weight: 700; color: var(--tinta); margin-bottom: 0.4rem; }
+.logro-desc { font-size: 0.84rem; color: var(--gris); line-height: 1.7; }
 
-/* =====================================================
-   EXPERIENCIA
-   ===================================================== */
+/* EXPERIENCIA */
 .tl { display: flex; flex-direction: column; }
-.tl-fila {
-  display: grid; grid-template-columns: 190px 1fr;
-  gap: 1.5rem; padding: 1.4rem 0;
-  border-bottom: 1px solid var(--borde);
-}
+.tl-fila { display: grid; grid-template-columns: 190px 1fr; gap: 1.5rem; padding: 1.4rem 0; border-bottom: 1px solid var(--borde); }
 .tl-fila:last-child { border-bottom: none; }
 .tl-fecha { font-family: var(--mono); font-size: 0.7rem; color: var(--azul); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.15rem; }
 .tl-org   { font-size: 0.8rem; color: var(--gris); }
 .tl-der   { position: relative; padding-left: 1.4rem; }
-.tl-der::before {
-  content: ''; position: absolute; left: 0; top: 0.48rem;
-  width: 8px; height: 8px; border-radius: 50%;
-  background: var(--azul-medio);
-  box-shadow: 0 0 0 3px rgba(95,163,216,0.22);
-}
+.tl-der::before { content: ''; position: absolute; left: 0; top: 0.48rem; width: 8px; height: 8px; border-radius: 50%; background: var(--azul-medio); box-shadow: 0 0 0 3px rgba(95,163,216,0.22); }
 .tl-puesto  { font-size: 0.94rem; font-weight: 700; color: var(--tinta); }
 .tl-detalle { font-size: 0.84rem; color: var(--gris); margin-top: 0.32rem; line-height: 1.7; }
+.tl-tags    { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.6rem; }
+.tl-tag     { font-family: var(--mono); font-size: 0.68rem; padding: 0.18rem 0.6rem; border-radius: 100px; border: 1px solid var(--borde); background: var(--crema); color: var(--gris); }
 
-/* =====================================================
-   HABILIDADES
-   ===================================================== */
-.skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.8rem; }
-.sk-titulo {
-  font-family: var(--mono); font-size: 0.68rem;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--verde); margin-bottom: 0.8rem;
-}
-.sk-lista { display: flex; flex-direction: column; gap: 0.4rem; }
-.sk-item { font-size: 0.83rem; color: var(--tinta2); background: var(--blanco); border: 1px solid var(--borde); border-radius: 6px; padding: 0.32rem 0.65rem; }
+/* SKILLS */
+.skills-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.8rem; }
+.sk-titulo { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--verde); margin-bottom: 0.8rem; }
+.sk-lista  { display: flex; flex-direction: column; gap: 0.4rem; }
+.sk-item   { font-size: 0.83rem; color: var(--tinta2); background: var(--blanco); border: 1px solid var(--borde); border-radius: 6px; padding: 0.32rem 0.65rem; }
 
-/* =====================================================
-   CONTACTO
-   ===================================================== */
-.contacto-caja {
-  max-width: 520px; margin: 0 auto;
-  background: var(--blanco); border: 1px solid var(--borde);
-  border-radius: 18px; padding: 2.8rem; text-align: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-}
+/* CONTACTO */
+.contacto-caja { max-width: 520px; margin: 0 auto; background: var(--blanco); border: 1px solid var(--borde); border-radius: 18px; padding: 2.8rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
 .contacto-sub   { font-size: 0.93rem; color: var(--gris); margin-bottom: 1.4rem; }
 .contacto-email { display: inline-block; font-family: var(--mono); font-size: 0.97rem; color: var(--azul); margin-bottom: 1.6rem; }
 .contacto-email:hover { text-decoration: underline; }
-.links-fila { display: flex; gap: 0.7rem; justify-content: center; margin-top: 1.1rem; }
-.link-btn {
-  font-family: var(--mono); font-size: 0.77rem;
-  padding: 0.45rem 1rem; border-radius: 7px;
-  border: 1px solid var(--borde); color: var(--gris);
-  background: var(--crema); transition: all 0.2s;
-}
+.links-fila { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; margin-top: 1.1rem; }
+.link-btn { font-family: var(--mono); font-size: 0.77rem; padding: 0.45rem 1rem; border-radius: 7px; border: 1px solid var(--borde); color: var(--gris); background: var(--crema); transition: all 0.2s; }
 .link-btn:hover { color: var(--azul); border-color: var(--azul); background: var(--azul-claro); }
 
-/* =====================================================
-   FOOTER
-   ===================================================== */
-footer {
-  background: var(--crema2); border-top: 1px solid var(--borde);
-  text-align: center; padding: 1.4rem;
-  font-family: var(--mono); font-size: 0.7rem; color: var(--gris);
-}
+/* FOOTER */
+footer { background: var(--crema2); border-top: 1px solid var(--borde); text-align: center; padding: 1.4rem; font-family: var(--mono); font-size: 0.7rem; color: var(--gris); }
 
-/* =====================================================
-   ANIMACIÓN SCROLL
-   ===================================================== */
+/* ANIMACIÓN */
 .aparece { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
 .aparece.visible { opacity: 1; transform: none; }
 
-/* =====================================================
-   RESPONSIVE
-   ===================================================== */
-@media (max-width: 860px) {
+/* RESPONSIVE */
+@media (max-width: 900px) {
   #hero { grid-template-columns: 1fr; text-align: center; padding-top: 6rem; }
   .foto-col { order: -1; }
   .hero-desc { max-width: 100%; }
@@ -344,23 +198,25 @@ footer {
   .sobre-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr 1fr; }
   .tl-fila { grid-template-columns: 1fr; gap: 0.3rem; }
+  .act-grid { grid-template-columns: 1fr; }
 }
-@media (max-width: 560px) {
+@media (max-width: 600px) {
   nav { padding: 0.85rem 1rem; }
-  .nav-links { gap: 1rem; }
+  .nav-links { gap: 0.9rem; }
   .fer-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
+  .conserva-intro { flex-direction: column; }
 }
 
 </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav>
   <span class="nav-marca">JDCT · UABCS · IFER</span>
   <ul class="nav-links">
     <li><a href="#sobre">Perfil</a></li>
+    <li><a href="#conserva">Conserva Loreto</a></li>
     <li><a href="#fer">Energías</a></li>
     <li><a href="#logros">Logros</a></li>
     <li><a href="#experiencia">Experiencia</a></li>
@@ -371,19 +227,18 @@ footer {
 
 <!-- HÉROE -->
 <section id="hero">
-
   <div class="hero-texto aparece">
-    <div class="hero-etiqueta">Ing. Fuentes de Energías Renovables · UABCS</div>
+    <div class="hero-chip">Ing. Fuentes de Energías Renovables · UABCS</div>
     <h1>Julio Cesar<br><span>Del Cid Torres</span></h1>
-    <p class="hero-cargo">Estudiante · 2do semestre · La Paz, BCS</p>
+    <p class="hero-cargo">Estudiante · 2do semestre · Loreto / La Paz, BCS</p>
     <p class="hero-desc">
-      Apasionado por la innovación energética y los proyectos de ingeniería con impacto real.
-      Mis áreas de mayor interés son la <strong>energía geotérmica</strong> y la
-      <em>solar fotovoltaica</em>. Experiencia internacional competitiva en energía eólica
-      y trabajo de campo en comunidades costeras de BCS.
+      Apasionado por la innovación energética con impacto real en comunidades.
+      Mis áreas de mayor interés: <strong>energía geotérmica</strong> y
+      <em>solar fotovoltaica</em>. Experiencia internacional en energía eólica
+      y pasantía en Conserva Loreto — protección del Parque Nacional Bahía de Loreto.
     </p>
     <div class="hero-botones">
-      <a class="btn btn-solido" href="#logros">Ver logros</a>
+      <a class="btn btn-solido" href="#conserva">Ver experiencia</a>
       <a class="btn btn-borde"  href="#contacto">Contacto</a>
     </div>
   </div>
@@ -392,33 +247,29 @@ footer {
 
     <!--
     ╔══════════════════════════════════════════════════════════╗
-    ║  📸  FOTO DE PERFIL — CAMBIA EL src="" DE AQUÍ ABAJO    ║
+    ║  📸  FOTO DE PERFIL — CAMBIA SOLO EL  src=""  DE ABAJO  ║
     ║                                                          ║
-    ║  Busca  src="..."  en la línea <img> de abajo y          ║
-    ║  reemplázalo con la ruta o URL de tu foto.               ║
+    ║  Busca la etiqueta <img id="foto-perfil"> y edita src="" ║
     ║                                                          ║
-    ║  Si subes tu foto al repositorio de GitHub:              ║
-    ║    src="foto.jpg"                                        ║
-    ║    src="assets/mi-foto.jpg"                              ║
-    ║                                                          ║
-    ║  Si usas una URL de internet:                            ║
-    ║    src="https://mi-sitio.com/foto.jpg"                   ║
+    ║  Foto en tu repositorio:  src="foto.jpg"                 ║
+    ║                           src="assets/mi-foto.jpg"       ║
+    ║  URL de internet:         src="https://..."              ║
     ╚══════════════════════════════════════════════════════════╝
     -->
     <div class="foto-marco">
       <img
-        src="https://raw.githubusercontent.com/jdelcid25-hash/mi-p-gina-web/refs/heads/main/descarga%20(5).jfif"
-        alt="Foto de perfil de Julio Cesar Del Cid Torres"
+        id="foto-perfil"
+        src="https://placehold.co/270x270/e8f2fb/1a6db5?text=Tu+Foto"
+        alt="Foto de perfil — Julio Cesar Del Cid Torres"
       >
     </div>
 
     <div class="foto-chips">
-      <span class="chip">📍 La Paz, BCS</span>
+      <span class="chip">📍 Loreto · La Paz, BCS</span>
       <span class="chip">🏆 Minneapolis 2024</span>
-      <span class="chip">UABCS · 2do sem.</span>
+      <span class="chip">🌿 Conserva Loreto</span>
     </div>
   </div>
-
 </section>
 
 
@@ -429,94 +280,165 @@ footer {
     <h2>Sobre mí</h2>
     <div class="sobre-grid">
       <div class="sobre-texto aparece">
-        <p>
-          Soy estudiante del segundo semestre de <strong>Ingeniería en Fuentes de Energías
-          Renovables (IFER)</strong> en la Universidad Autónoma de Baja California Sur (UABCS).
-          Me apasionan los proyectos innovadores de ingeniería que generen un impacto tangible
-          en comunidades y en el medio ambiente.
-        </p>
-        <p>
-          Mi perfil combina formación académica con experiencia práctica diversa: desde la
-          pesca comercial en comunidades rurales costeras hasta competir internacionalmente
-          en energía eólica en Minneapolis, Minnesota. Esa variedad de vivencias me da una
-          perspectiva amplia y una capacidad de adaptación poco común.
-        </p>
-        <p>
-          En 2024 colaboré con <strong>The Ocean Foundation</strong> en el programa
-          Conserva Loreto, aplicando ingeniería ambiental a la conservación marina en BCS.
-        </p>
+        <p>Soy estudiante del segundo semestre de <strong>Ingeniería en Fuentes de Energías Renovables (IFER)</strong> en la Universidad Autónoma de Baja California Sur (UABCS). Me apasionan los proyectos innovadores de ingeniería con impacto real en comunidades y en el medio ambiente.</p>
+        <p>Mi trayectoria combina formación académica con experiencia práctica diversa: desde la pesca comercial en San Nicolás, Loreto, hasta representar a México en una competencia internacional de energía eólica en Minneapolis, Minnesota.</p>
+        <p>En 2024 realicé una pasantía en <strong>Conserva Loreto</strong> (The Ocean Foundation), donde participé en el BioBlitz Loreto 2024, trabajo con comunidades rurales y la iniciativa de cielos oscuros <strong>Loreto Cielo Mágico</strong>.</p>
       </div>
       <div class="sobre-stats aparece">
         <div class="stat-caja"><div class="stat-num">2024</div><div class="stat-lab">Kid Wind World Challenge</div></div>
-        <div class="stat-caja"><div class="stat-num">MN</div><div class="stat-lab">Final mundial en Minneapolis</div></div>
-        <div class="stat-caja"><div class="stat-num">BCS</div><div class="stat-lab">Baja California Sur, México</div></div>
-        <div class="stat-caja"><div class="stat-num">IFER</div><div class="stat-lab">Ing. Energías Renovables · UABCS</div></div>
+        <div class="stat-caja"><div class="stat-num">MN</div><div class="stat-lab">Final mundial Minneapolis</div></div>
+        <div class="stat-caja"><div class="stat-num">521</div><div class="stat-lab">especies en BioBlitz Loreto 2024</div></div>
+        <div class="stat-caja"><div class="stat-num">IFER</div><div class="stat-lab">Ingeniería Energías Renovables · UABCS</div></div>
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- ENERGÍAS RENOVABLES -->
-<section id="fer" class="seccion sec-fondo-crema">
+<!-- CONSERVA LORETO -->
+<section id="conserva" class="seccion sec-fondo-crema">
   <div class="seccion-inner">
-    <p class="sec-etiq">02 · Fuentes de Energía Renovable</p>
+    <p class="sec-etiq">02 · Experiencia destacada</p>
+    <h2>Pasantía en Conserva Loreto</h2>
+
+    <div class="conserva-intro aparece">
+      <div class="conserva-icono">🌿</div>
+      <div>
+        <h3>Conserva Loreto · The Ocean Foundation · Loreto, BCS</h3>
+        <p>
+          Conserva Loreto es un programa de <strong>The Ocean Foundation</strong> dedicado a fortalecer
+          las áreas naturales protegidas de la región: el <strong>Parque Nacional Bahía de Loreto</strong>
+          (parte del Patrimonio Mundial de la UNESCO), Loreto II y Nopoló. Su misión:
+          preservar la biodiversidad y el bienestar de la comunidad mediante ciencia participativa,
+          educación ambiental y trabajo comunitario. <br><br>
+          Participé como <strong>pasante</strong> —una de las pocas posiciones de este tipo en el programa—
+          bajo la dirección de la Dra. Sula Vanderplank, ecóloga con más de 20 años de investigación en la
+          Península de Baja California. Mi trabajo se desarrolló en tres líneas:
+        </p>
+      </div>
+    </div>
+
+    <div class="act-grid aparece">
+
+      <div class="act-card bio">
+        <div class="act-ico">🔬</div>
+        <div class="act-tit">BioBlitz Loreto 2024</div>
+        <p class="act-txt">
+          Participé en el <strong>BioBlitz Loreto 2024</strong>, evento de ciencia ciudadana
+          celebrado del 24 al 26 de febrero de 2024 dentro del Parque Nacional Bahía de Loreto.
+          El objetivo: registrar la mayor cantidad de especies posible en un tiempo y lugar
+          específicos usando la plataforma <em>iNaturalist</em>. El evento reunió a biólogos,
+          maestros, familias, fotógrafos y comunidad en general, y logró documentar
+          <strong>521 especies</strong>. Este inventario de biodiversidad se convierte en
+          herramienta científica para la gestión y defensa legal del parque.
+        </p>
+      </div>
+
+      <div class="act-card rural">
+        <div class="act-ico">🏘️</div>
+        <div class="act-tit">Apoyo a comunidades rurales</div>
+        <p class="act-txt">
+          Trabajo de campo con comunidades rurales de la sierra, incluyendo los ranchos de
+          <strong>Paso de Santa Cruz</strong> —zona de relevancia ecológica para Conserva Loreto—.
+          Las actividades incluyeron charlas de introducción a <em>iNaturalist</em> para ejidatarios
+          y rancheros, expediciones nocturnas con trampas-cámara (venados, mapaches, aves),
+          y acompañamiento en iniciativas de educación ambiental. Esta experiencia reforzó mi
+          convicción: involucrar a las comunidades locales como actores centrales en la conservación
+          es tan importante como la ciencia misma.
+        </p>
+      </div>
+
+      <div class="act-card cielo">
+        <div class="act-ico">🌌</div>
+        <div class="act-tit">Loreto Cielo Mágico</div>
+        <p class="act-txt">
+          Apoyo a la iniciativa <strong>Loreto Cielo Mágico</strong> — impulsada por el
+          <em>Club de Astronomía Cielo Mágico</em> (loretocielomagico.org) en colaboración con
+          Conserva Loreto y Keep Loreto Magical. La iniciativa defiende el cielo nocturno de Loreto
+          de la contaminación lumínica, que afecta la biodiversidad (tortugas marinas, fauna nocturna,
+          polinizadores) y el potencial de astroturismo de la región. El Festival Astronómico Cielo Mágico
+          incluyó charlas, observaciones con telescopios, astrofotografía en vivo y talleres de
+          iluminación responsable. Loreto, con más de 300 días de sol y mínima contaminación lumínica,
+          tiene un cielo nocturno que vale la pena defender.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="conserva-cita aparece">
+      "Loreto nos une: cuidemos su riqueza natural para el bienestar de todos." — Lema de Conserva Loreto.<br><br>
+      Esta pasantía me mostró que conservación e ingeniería en energías renovables son la misma causa: un municipio con ecosistemas sanos, cielos oscuros protegidos y comunidades rurales empoderadas es exactamente donde los proyectos de solar fotovoltaica aislada y uso inteligente de la energía tienen mayor impacto.
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ENERGÍAS RENOVABLES -->
+<section id="fer" class="seccion sec-fondo-alt">
+  <div class="seccion-inner">
+    <p class="sec-etiq">03 · Fuentes de Energía Renovable</p>
     <h2>Áreas de interés</h2>
     <div class="fer-grid">
-
       <div class="fer-tarjeta geo aparece">
         <span class="fer-badge">⭐ Principal</span>
         <div class="fer-icono">🌋</div>
         <div class="fer-titulo">Energía Geotérmica</div>
-        <p class="fer-desc">Fascinado por el potencial geotérmico del Pacífico mexicano y la Península de Baja California. Me interesa el diseño de sistemas de aprovechamiento de baja entalpía para comunidades rurales y la generación base 24/7 con baja huella de carbono.</p>
+        <p class="fer-desc">Fascinado por el potencial geotérmico del Pacífico mexicano y BCS. Me interesa el diseño de sistemas de aprovechamiento de baja entalpía para comunidades rurales y la generación base 24/7 con baja huella de carbono.</p>
       </div>
-
       <div class="fer-tarjeta solar aparece">
         <span class="fer-badge">⭐ Principal</span>
         <div class="fer-icono">☀️</div>
         <div class="fer-titulo">Solar Fotovoltaica</div>
-        <p class="fer-desc">BCS tiene una de las irradiancias solares más altas de México. Me enfoco en sistemas fotovoltaicos aislados para comunidades sin acceso a la red eléctrica, integración de baterías y micro-redes resilientes con alto impacto social.</p>
+        <p class="fer-desc">BCS tiene una de las irradiancias solares más altas de México. Me enfoco en sistemas FV aislados para comunidades sin acceso a la red, baterías y micro-redes resilientes. Mi trabajo en comunidades rurales de Loreto reforzó este interés.</p>
       </div>
-
       <div class="fer-tarjeta eolica aparece">
         <span class="fer-badge">Experiencia</span>
         <div class="fer-icono">💨</div>
         <div class="fer-titulo">Energía Eólica</div>
         <p class="fer-desc">Experiencia competitiva en diseño y construcción de turbinas a escala mediante el Kid Wind World Challenge 2024. Clasificado y participante en la final mundial en Minneapolis, Minnesota, representando a México.</p>
       </div>
-
       <div class="fer-tarjeta marina aparece">
         <span class="fer-badge">Interés</span>
         <div class="fer-icono">🌊</div>
-        <div class="fer-titulo">Energía Marina y Conservación</div>
-        <p class="fer-desc">A través de mi colaboración en Conserva Loreto y The Ocean Foundation, exploré la intersección entre energías renovables y conservación de ecosistemas marinos en el Golfo de California.</p>
+        <div class="fer-titulo">Energía y Conservación Marina</div>
+        <p class="fer-desc">Mi pasantía en el Parque Nacional Bahía de Loreto —parte del Patrimonio Mundial de la UNESCO— me mostró de primera mano la relación entre ecosistemas marinos y la demanda energética local. Interés en energías limpias para pesca artesanal y comunidades costeras.</p>
       </div>
-
     </div>
   </div>
 </section>
 
 
 <!-- LOGROS -->
-<section id="logros" class="seccion sec-fondo-alt">
+<section id="logros" class="seccion sec-fondo-crema">
   <div class="seccion-inner">
-    <p class="sec-etiq">03 · Logros</p>
+    <p class="sec-etiq">04 · Logros</p>
     <h2>Hitos destacados</h2>
     <div class="logros-grid">
       <div class="logro-tarjeta aparece">
-        <div class="logro-icono-wrap azul">🏆</div>
-        <div class="logro-titulo">Kid Wind World Challenge 2024</div>
-        <p class="logro-desc">Clasificación exitosa en la fase nacional de diseño e innovación de turbinas eólicas a escala, demostrando capacidad técnica y trabajo en equipo.</p>
+        <div class="logro-ico-wrap ib">🏆</div>
+        <div class="logro-tit">Kid Wind World Challenge 2024</div>
+        <p class="logro-desc">Clasificación exitosa en la competencia nacional de diseño e innovación de turbinas eólicas a escala.</p>
       </div>
       <div class="logro-tarjeta aparece">
-        <div class="logro-icono-wrap azul">🌐</div>
-        <div class="logro-titulo">Final Mundial — Minneapolis, MN</div>
-        <p class="logro-desc">Representación de México en el Kid Wind World 2024 en Minneapolis, Minnesota. Exposición a estándares internacionales de innovación energética.</p>
+        <div class="logro-ico-wrap ib">🌐</div>
+        <div class="logro-tit">Final Mundial — Minneapolis, MN</div>
+        <p class="logro-desc">Representación de México en el Kid Wind World 2024 en Minneapolis, Minnesota.</p>
       </div>
       <div class="logro-tarjeta aparece">
-        <div class="logro-icono-wrap verde">🌊</div>
-        <div class="logro-titulo">Conserva Loreto — The Ocean Foundation</div>
-        <p class="logro-desc">Colaboración con The Ocean Foundation vinculando ingeniería ambiental con conservación marina en comunidades costeras de BCS.</p>
+        <div class="logro-ico-wrap ig">🔬</div>
+        <div class="logro-tit">BioBlitz Loreto 2024</div>
+        <p class="logro-desc">Ciencia ciudadana que documentó 521 especies en el Parque Nacional Bahía de Loreto con iNaturalist.</p>
+      </div>
+      <div class="logro-tarjeta aparece">
+        <div class="logro-ico-wrap in">🌌</div>
+        <div class="logro-tit">Loreto Cielo Mágico</div>
+        <p class="logro-desc">Apoyo al Festival Astronómico y campaña de protección del cielo nocturno de Loreto contra la contaminación lumínica.</p>
+      </div>
+      <div class="logro-tarjeta aparece">
+        <div class="logro-ico-wrap ig">🌿</div>
+        <div class="logro-tit">Pasante — Conserva Loreto</div>
+        <p class="logro-desc">Una de las pocas posiciones de pasante en el programa de The Ocean Foundation para la conservación de las ANP de Loreto, BCS.</p>
       </div>
     </div>
   </div>
@@ -524,10 +446,10 @@ footer {
 
 
 <!-- EXPERIENCIA -->
-<section id="experiencia" class="seccion sec-fondo-crema">
+<section id="experiencia" class="seccion sec-fondo-alt">
   <div class="seccion-inner">
-    <p class="sec-etiq">04 · Experiencia</p>
-    <h2>Trayectoria</h2>
+    <p class="sec-etiq">05 · Trayectoria</p>
+    <h2>Experiencia</h2>
     <div class="tl aparece">
 
       <div class="tl-fila">
@@ -536,19 +458,31 @@ footer {
           <div class="tl-org">UABCS · La Paz, BCS</div>
         </div>
         <div class="tl-der">
-          <div class="tl-puesto">Estudiante — Ing. en Fuentes de Energías Renovables</div>
-          <p class="tl-detalle">Cursando el segundo semestre de IFER en la Universidad Autónoma de Baja California Sur, con enfoque en energía geotérmica y solar fotovoltaica.</p>
+          <div class="tl-puesto">Estudiante — Ing. en Fuentes de Energías Renovables (IFER)</div>
+          <p class="tl-detalle">Segundo semestre en la Universidad Autónoma de Baja California Sur, con enfoque en energía geotérmica y solar fotovoltaica.</p>
+          <div class="tl-tags"><span class="tl-tag">UABCS</span><span class="tl-tag">Geotérmica</span><span class="tl-tag">Solar FV</span></div>
         </div>
       </div>
 
       <div class="tl-fila">
         <div class="tl-izq">
           <div class="tl-fecha">2024</div>
-          <div class="tl-org">The Ocean Foundation · Loreto, BCS</div>
+          <div class="tl-org">Conserva Loreto · The Ocean Foundation · Loreto, BCS</div>
         </div>
         <div class="tl-der">
-          <div class="tl-puesto">Colaborador — Conserva Loreto</div>
-          <p class="tl-detalle">Apoyo en actividades de conservación marina y desarrollo comunitario sustentable con organización internacional sin fines de lucro.</p>
+          <div class="tl-puesto">Pasante — Conserva Loreto</div>
+          <p class="tl-detalle">
+            Pasantía en el programa de conservación de The Ocean Foundation. Actividades: BioBlitz Loreto 2024
+            (521 especies registradas con iNaturalist), trabajo de campo en comunidades rurales y ranchos de la sierra
+            (Paso de Santa Cruz), y apoyo a la iniciativa de cielos oscuros
+            <strong>Loreto Cielo Mágico</strong> — Festival Astronómico, observaciones nocturnas con telescopios
+            y campaña de concienciación sobre contaminación lumínica.
+          </p>
+          <div class="tl-tags">
+            <span class="tl-tag">BioBlitz</span><span class="tl-tag">iNaturalist</span>
+            <span class="tl-tag">Comunidades rurales</span><span class="tl-tag">Cielos oscuros</span>
+            <span class="tl-tag">Conservación</span>
+          </div>
         </div>
       </div>
 
@@ -559,7 +493,8 @@ footer {
         </div>
         <div class="tl-der">
           <div class="tl-puesto">Competidor — Kid Wind World Challenge</div>
-          <p class="tl-detalle">Diseño y construcción de turbina eólica a escala. Trabajo en equipo bajo presión y representación de México en competencia internacional de energía renovable.</p>
+          <p class="tl-detalle">Diseño y construcción de turbina eólica a escala. Representación de México en la final mundial en Minneapolis, Minnesota.</p>
+          <div class="tl-tags"><span class="tl-tag">Energía eólica</span><span class="tl-tag">Trabajo en equipo</span><span class="tl-tag">Competencia internacional</span></div>
         </div>
       </div>
 
@@ -570,7 +505,8 @@ footer {
         </div>
         <div class="tl-der">
           <div class="tl-puesto">Ayudante de Topógrafo</div>
-          <p class="tl-detalle">Levantamientos topográficos con manejo básico de Civil CAD y AutoCAD. Gran capacidad de aprendizaje en entornos técnicos de ingeniería civil.</p>
+          <p class="tl-detalle">Levantamientos topográficos con manejo básico de Civil CAD y AutoCAD. Gran capacidad de aprendizaje rápido en entornos técnicos.</p>
+          <div class="tl-tags"><span class="tl-tag">AutoCAD</span><span class="tl-tag">Civil CAD</span><span class="tl-tag">Topografía</span></div>
         </div>
       </div>
 
@@ -581,7 +517,7 @@ footer {
         </div>
         <div class="tl-der">
           <div class="tl-puesto">Pescador Comercial</div>
-          <p class="tl-detalle">Trabajo en comunidad rural costera con conocimiento directo del ecosistema marino y la economía local.</p>
+          <p class="tl-detalle">Trabajo en comunidad rural costera. Conocimiento directo del ecosistema marino y la economía pesquera local.</p>
         </div>
       </div>
 
@@ -592,7 +528,7 @@ footer {
         </div>
         <div class="tl-der">
           <div class="tl-puesto">Construcción · Cerrajería · Vendedor Ambulante</div>
-          <p class="tl-detalle">Experiencia diversa en obra civil, mecánica y comercio. Disciplina, habilidades técnicas manuales y capacidad de adaptación en entornos exigentes.</p>
+          <p class="tl-detalle">Experiencia diversa en obra civil, mecánica y comercio. Disciplina, habilidades técnicas y adaptación en entornos exigentes.</p>
         </div>
       </div>
 
@@ -601,10 +537,10 @@ footer {
 </section>
 
 
-<!-- HABILIDADES -->
-<section id="habilidades" class="seccion sec-fondo-alt">
+<!-- SKILLS -->
+<section id="habilidades" class="seccion sec-fondo-crema">
   <div class="seccion-inner">
-    <p class="sec-etiq">05 · Competencias</p>
+    <p class="sec-etiq">06 · Competencias</p>
     <h2>Habilidades</h2>
     <div class="skills-grid aparece">
       <div>
@@ -628,22 +564,23 @@ footer {
         </div>
       </div>
       <div>
-        <div class="sk-titulo">// Habilidades blandas</div>
+        <div class="sk-titulo">// Conservación</div>
         <div class="sk-lista">
-          <span class="sk-item">Trabajo en equipo</span>
-          <span class="sk-item">Liderazgo</span>
-          <span class="sk-item">Adaptabilidad</span>
-          <span class="sk-item">Aprendizaje rápido</span>
-          <span class="sk-item">Pensamiento crítico</span>
+          <span class="sk-item">Ciencia ciudadana</span>
+          <span class="sk-item">iNaturalist</span>
+          <span class="sk-item">Trabajo comunitario rural</span>
+          <span class="sk-item">Educación ambiental</span>
+          <span class="sk-item">Cielos oscuros</span>
         </div>
       </div>
       <div>
-        <div class="sk-titulo">// Idiomas</div>
+        <div class="sk-titulo">// Blandas e idiomas</div>
         <div class="sk-lista">
+          <span class="sk-item">Trabajo en equipo</span>
+          <span class="sk-item">Adaptabilidad</span>
+          <span class="sk-item">Aprendizaje rápido</span>
           <span class="sk-item">Español — nativo</span>
           <span class="sk-item">Inglés — básico</span>
-          <span class="sk-item">Conservación marina</span>
-          <span class="sk-item">Trabajo comunitario</span>
         </div>
       </div>
     </div>
@@ -652,39 +589,34 @@ footer {
 
 
 <!-- CONTACTO -->
-<section id="contacto" class="seccion sec-fondo-crema">
+<section id="contacto" class="seccion sec-fondo-alt">
   <div class="seccion-inner">
-    <p class="sec-etiq">06 · Contacto</p>
+    <p class="sec-etiq">07 · Contacto</p>
     <h2>Hablemos</h2>
     <div class="contacto-caja aparece">
-      <p class="contacto-sub">¿Tienes un proyecto, propuesta de investigación o quieres colaborar en innovación energética?</p>
-      <a class="contacto-email" href="mailto:jdelcid_25@alu.uabcs.mx">jdelcid_25@alu.uabcs.mx</a>
-      <br>
+      <p class="contacto-sub">¿Tienes un proyecto, propuesta de investigación o quieres colaborar en innovación energética o conservación?</p>
+      <a class="contacto-email" href="mailto:jdelcid_25@alu.uabcs.mx">jdelcid_25@alu.uabcs.mx</a><br>
       <a class="btn btn-solido" href="mailto:jdelcid_25@alu.uabcs.mx">Enviar correo</a>
       <div class="links-fila">
-        <a class="link-btn" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-        <a class="link-btn" href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="link-btn" href="https://uabcs.mx"     target="_blank" rel="noopener">UABCS</a>
+        <a class="link-btn" href="https://github.com/"                       target="_blank" rel="noopener">GitHub</a>
+        <a class="link-btn" href="https://linkedin.com/"                     target="_blank" rel="noopener">LinkedIn</a>
+        <a class="link-btn" href="https://www.conservaloreto.org.mx"         target="_blank" rel="noopener">Conserva Loreto</a>
+        <a class="link-btn" href="https://loretocielomagico.org"             target="_blank" rel="noopener">Cielo Mágico</a>
+        <a class="link-btn" href="https://uabcs.mx"                         target="_blank" rel="noopener">UABCS</a>
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- FOOTER -->
 <footer>
-  &copy; 2025 Julio Cesar Del Cid Torres &nbsp;&middot;&nbsp; UABCS &nbsp;&middot;&nbsp; Ingeniería en Fuentes de Energías Renovables &nbsp;&middot;&nbsp; La Paz, BCS
+  &copy; 2025 Julio Cesar Del Cid Torres &nbsp;&middot;&nbsp; UABCS · IFER &nbsp;&middot;&nbsp; La Paz, BCS, México
 </footer>
 
-
-<!-- ANIMACIONES AL HACER SCROLL -->
 <script>
   var obs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        obs.unobserve(e.target);
-      }
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
     });
   }, { threshold: 0.08 });
   document.querySelectorAll('.aparece').forEach(function(el) { obs.observe(el); });
